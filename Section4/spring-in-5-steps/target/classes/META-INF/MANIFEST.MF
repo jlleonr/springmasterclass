@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: spring-in-5-steps
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: E518140
+Implementation-Vendor-Id: com.springmasterclass.basics
+Build-Jdk: 1.8.0_91
+Implementation-URL: http://projects.spring.io/spring-boot/spring-boot-
+ starter-parent/spring-in-5-steps/
+Created-By: Maven Integration for Eclipse
+
