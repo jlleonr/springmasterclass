@@ -1,13 +1,13 @@
 package com.springmasterclass.basics.springin5steps;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class BinarySearchImpl {
 
-	private final SortAlgorithm sortAlgorithm;
-
-	public BinarySearchImpl(SortAlgorithm sortAlgorithm) {
-		super();
-		this.sortAlgorithm = sortAlgorithm;
-	}
+	@Autowired
+	private SortAlgorithm sortAlgorithm;
 
 	/**
 	 * Binary search method
