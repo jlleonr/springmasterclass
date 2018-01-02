@@ -1,6 +1,8 @@
 target/
 !.mvn/wrapper/maven-wrapper.jar
 
+spring-in-depth/
+
 ### STS ###
 .apt_generated
 .classpath
