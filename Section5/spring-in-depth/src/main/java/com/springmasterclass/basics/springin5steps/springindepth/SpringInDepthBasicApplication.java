@@ -1,12 +1,18 @@
 package com.springmasterclass.basics.springin5steps.springindepth;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ConfigurableApplicationContext;
+//import org.springframework.context.ApplicationContext;
+//import org.springframework.boot.SpringApplication;
+//import org.springframework.boot.autoconfigure.SpringBootApplication;
+//import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
 import com.springmasterclass.basics.springin5steps.springindepth.basic.BinarySearchImpl;
 
-@SpringBootApplication
+//@SpringBootApplication
+@Configuration
+@ComponentScan("com.springmasterclass.basics.springin5steps.springindepth.basic")
 public class SpringInDepthBasicApplication {
 	
 	//What are the beans?
@@ -24,17 +30,28 @@ public class SpringInDepthBasicApplication {
 		//BinarySearchImpl binarySearch = new BinarySearchImpl(new BubbleSortAlgorithm());
 		//int result = binarySearch.binarySearch(new int[] { 12, 4, 6 }, 3);
 		
-		ConfigurableApplicationContext applicationContext = 
-				SpringApplication.run(SpringInDepthBasicApplication.class, args);
+		try (AnnotationConfigApplicationContext annotationConfigApplicationContext = 
+				new AnnotationConfigApplicationContext(SpringInDepthBasicApplication.class)) {
+				// AnnotationConfigApplicationContext applicationContext =
+				// SpringApplication.run(SpringInDepthBasicApplication.class, args);
+				// annotationConfigApplicationContext;
+
+				// BinarySearchImpl binarySearch =
+				// applicationContext.getBean(BinarySearchImpl.class);
+				BinarySearchImpl binarySearch = 
+							annotationConfigApplicationContext.getBean(BinarySearchImpl.class);
+	
+				// BinarySearchImpl binarySearch2 =
+				// applicationContext.getBean(BinarySearchImpl.class);
+				BinarySearchImpl binarySearch2 = 
+							annotationConfigApplicationContext.getBean(BinarySearchImpl.class);
+	
+				System.out.println(binarySearch);
+				System.out.println(binarySearch2);
+				
+				int result = binarySearch.binarySearch(new int[] { 12, 4, 6 }, 3);
+				System.out.println(result);
+		}
 		
-		BinarySearchImpl binarySearch = applicationContext.getBean(BinarySearchImpl.class);
-		
-		BinarySearchImpl binarySearch2 = applicationContext.getBean(BinarySearchImpl.class);
-		
-		System.out.println(binarySearch);
-		System.out.println(binarySearch2);
-		
-		int result = binarySearch.binarySearch(new int[] { 12, 4, 6 }, 3);
-		System.out.println(result);
 	}
 }
