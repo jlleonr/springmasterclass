@@ -1,8 +1,8 @@
 package com.springmasterclass.basics.springin5steps.springindepth.basic;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 //@Primary
 public class BubbleSortAlgorithm implements SortAlgorithm{
 	
