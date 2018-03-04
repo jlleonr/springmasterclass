@@ -11,10 +11,10 @@ import org.slf4j.LoggerFactory;
 //@Component
 @Named
 public class CDI_Business {
-	
+
 	Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	//@Autowired
+	// @Autowired
 	@Inject
 	CDI_DAO cdiDAO;
 
@@ -25,13 +25,27 @@ public class CDI_Business {
 	public void setCdiDAO(CDI_DAO cdiDAO) {
 		this.cdiDAO = cdiDAO;
 	}
-	
+
+	public int findGreatest() {
+		int greatest = Integer.MIN_VALUE;
+		int[] data = cdiDAO.getData();
+
+		for (int value : data) {
+			if (value > greatest) {
+				greatest = value;
+			}
+
+		}
+
+		return greatest;
+	}
+
 	@PostConstruct
 	private void postConstruct() {
 		logger.info("CDI_Business postConstruct");
 
 	}
-	
+
 	@PreDestroy
 	private void preDestroy() {
 		logger.info("CDI_Business preDestroy");
