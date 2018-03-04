@@ -11,30 +11,30 @@ import org.junit.Test;
 public class MyMathTest {
 
 	MyMath myMath = new MyMath();
-	
-	//@Before :
-	//Runs the method with the annotation before every JUnit test
+
+	// @Before :
+	// Runs the method with the annotation before every JUnit test
 	@Before
 	public void before() {
 		System.out.println("Before");
 	}
-	
-	//@BeforeClass :
-	//Runs the method with the annotation before any JUnit test
+
+	// @BeforeClass :
+	// Runs the method with the annotation before any JUnit test
 	@BeforeClass
 	public static void beforeClass() {
 		System.out.println("BeforeClass");
 	}
-	
-	//@After :
-	//Runs the method with the annotation after every JUnit test
+
+	// @After :
+	// Runs the method with the annotation after every JUnit test
 	@After
 	public void after() {
 		System.out.println("After");
 	}
-	
-	//@AfterClass :
-	//Runs the method with the annotation after all JUnit tests
+
+	// @AfterClass :
+	// Runs the method with the annotation after all JUnit tests
 	@AfterClass
 	public static void afterClass() {
 		System.out.println("AfterClass");
@@ -42,8 +42,8 @@ public class MyMathTest {
 
 	// Test1
 	// Call MyMath.sum(1,2,3) and check that result == 6
-	
-	//Test2 
+
+	// Test2
 	// Call MyMath.sum(3) and check that result == 3
 
 	@Test
